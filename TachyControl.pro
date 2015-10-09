@@ -20,10 +20,11 @@ MOC_DIR = $$DESTDIR/.moc
 RCC_DIR = $$DESTDIR/.qrc
 UI_DIR = $$DESTDIR/.ui
 
+INCLUDEPATH += $$PWD/include
 
 SOURCES += main.cpp \
     tachycontrol.cpp
 
 HEADERS += \
-    tachycontrol.h
+    include/tachycontrol.h
 
