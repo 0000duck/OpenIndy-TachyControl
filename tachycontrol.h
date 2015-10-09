@@ -12,6 +12,12 @@
 #include <QVariantMap>
 #include <QPointer>
 
+#if defined(TC_LIB)
+#  define TC_EXPORT Q_DECL_EXPORT
+#else
+#  define TC_EXPORT Q_DECL_IMPORT
+#endif
+
 namespace tc{
 
 #define PI 3.141592653589793
@@ -29,7 +35,7 @@ enum MeasureModes{
 /*!
  * \brief The ConnectionConfig struct
  */
-struct ConnectionConfig{
+struct TC_EXPORT ConnectionConfig{
 
     QString comPort;
     QSerialPort::BaudRate baudRate;
@@ -42,7 +48,7 @@ struct ConnectionConfig{
 /*!
  * \brief The MeasurementConfig struct
  */
-struct MeasurementConfig{
+struct TC_EXPORT MeasurementConfig{
     bool reflectorless;
     MeasureModes measMode;
     int iterations;
@@ -53,7 +59,7 @@ struct MeasurementConfig{
 /*!
  * \brief The TachyControl class
  */
-class TachyControl
+class TC_EXPORT TachyControl
 {
 public:
     TachyControl();

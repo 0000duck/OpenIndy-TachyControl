@@ -5,8 +5,9 @@ TARGET = TachyControl
 CONFIG += console
 CONFIG -= app_bundle
 
-TEMPLATE = app
+TEMPLATE = lib
 
+DEFINES += TC_LIB
 
 CONFIG(debug, debug|release) {
     DESTDIR = $$PWD/bin/debug
